@@ -14,17 +14,17 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
   return (
     <button
       onClick={() => onClick(service)}
-      className="group relative flex flex-col items-center justify-center aspect-square bg-white dark:bg-zinc-900 rounded-3xl p-4 shadow-sm border border-gray-100 dark:border-zinc-800 active:scale-95 transition-all duration-200 hover:shadow-md overflow-hidden"
+      className="group relative flex flex-col items-center justify-center aspect-square bg-white dark:bg-zinc-900 rounded-[2.25rem] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none border border-gray-100 dark:border-zinc-800/80 active:scale-90 transition-all duration-300 hover:border-primary/30 dark:hover:border-primary/50 overflow-hidden"
     >
-      <div className={`mb-3 p-3 rounded-2xl ${service.color} text-white shadow-lg shadow-current/20 group-hover:scale-110 transition-transform`}>
-        {Icon && <Icon size={24} />}
+      <div className={`mb-4 p-4 rounded-2xl ${service.color} text-white shadow-xl shadow-current/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+        {Icon && <Icon size={26} strokeWidth={2.5} />}
       </div>
-      <h3 className="text-xs font-bold text-gray-800 dark:text-zinc-200 text-center line-clamp-2">
+      <h3 className="text-[13px] font-bold text-gray-800 dark:text-zinc-100 text-center leading-tight">
         {service.name}
       </h3>
-      <div className="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-        <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-      </div>
+      
+      {/* Decorative background element */}
+      <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-gray-50 dark:bg-zinc-800/30 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500" />
     </button>
   );
 };
