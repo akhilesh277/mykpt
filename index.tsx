@@ -1,16 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./style.css";
 
-const rootElement = document.getElementById("root");
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './style.css';
 
+const rootElement = document.getElementById('root');
 if (!rootElement) {
-  throw new Error("Root element with id 'root' not found");
+  throw new Error("Could not find root element to mount to");
 }
 
 const root = ReactDOM.createRoot(rootElement);
-
 root.render(
   <React.StrictMode>
     <App />

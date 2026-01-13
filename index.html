@@ -1,76 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
-  />
-  <title>MyKPT - KPT Mangalore</title>
-
-  <!-- 1. Suppress ONLY the Tailwind CDN production warning (no UI/CSS touched) -->
-  <script>
-    (function () {
-      const originalWarn = console.warn;
-      console.warn = function (...args) {
-        if (
-          args[0] &&
-          typeof args[0] === "string" &&
-          args[0].includes("cdn.tailwindcss.com should not be used in production")
-        ) {
-          return; // ignore only this warning
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>MyKPT - KPT Mangalore</title>
+    <!-- Suppress Tailwind CDN production warning -->
+    <script>
+        (function() {
+            const originalWarn = console.warn;
+            console.warn = function(...args) {
+                if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) {
+                    return;
+                }
+                originalWarn.apply(console, args);
+            };
+        })();
+    </script>
+    <!-- Tailwind Play CDN for immediate preview restoration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#3b82f6',
+                        accent: '#fbbf24',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'marquee': 'marquee 20s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
         }
-        originalWarn.apply(console, args);
-      };
-    })();
-  </script>
-
-  <!-- 2. Keep Tailwind CDN (this is what makes your UI beautiful) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- 3. Google Font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- 4. Tailwind Config (all features kept) -->
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#1e40af",
-            secondary: "#3b82f6",
-            accent: "#fbbf24",
-          },
-          animation: {
-            "fade-in": "fadeIn 0.3s ease-out",
-            "slide-up": "slideUp 0.3s ease-out",
-            marquee: "marquee 20s linear infinite",
-          },
-          keyframes: {
-            fadeIn: {
-              "0%": { opacity: "0" },
-              "100%": { opacity: "1" },
-            },
-            slideUp: {
-              "0%": { transform: "translateY(10px)", opacity: "0" },
-              "100%": { transform: "translateY(0)", opacity: "1" },
-            },
-            marquee: {
-              "0%": { transform: "translateX(100%)' },
-              "100%": { transform: "translateX(-100%)" },
-            },
-          },
-        },
-      },
-    };
-  </script>
-
-  <!-- 5. Import Map -->
-  <script type="importmap">
+    </script>
+    <script type="importmap">
     {
       "imports": {
         "react/": "https://esm.sh/react@^19.2.3/",
@@ -80,31 +62,20 @@
         "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
       }
     }
-  </script>
-
-  <!-- 6. Tailwind base styles -->
-  <style type="text/tailwindcss">
-    @layer base {
-      body {
-        @apply font-['Inter'] bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-zinc-100;
-        -webkit-tap-highlight-color: transparent;
-        overscroll-behavior-y: contain;
-      }
-    }
-
-    .safe-bottom {
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-    .safe-top {
-      padding-top: env(safe-area-inset-top);
-    }
-  </style>
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-['Inter'] bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-zinc-100;
+                -webkit-tap-highlight-color: transparent;
+                overscroll-behavior-y: contain;
+            }
+        }
+        .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+        .safe-top { padding-top: env(safe-area-inset-top); }
+    </style>
 </head>
-
 <body class="transition-colors duration-300">
-  <div id="root"></div>
-
-  <!-- This line starts your React app -->
-  <script type="module" src="/index.tsx"></script>
+    <div id="root"></div>
 </body>
 </html>
