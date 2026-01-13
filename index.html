@@ -34,7 +34,7 @@
     rel="stylesheet"
   />
 
-  <!-- 4. Tailwind Config (unchanged, all your features kept) -->
+  <!-- 4. Tailwind Config (all features kept) -->
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -60,7 +60,7 @@
               "100%": { transform: "translateY(0)", opacity: "1" },
             },
             marquee: {
-              "0%": { transform: "translateX(100%)" },
+              "0%": { transform: "translateX(100%)' },
               "100%": { transform: "translateX(-100%)" },
             },
           },
@@ -69,7 +69,7 @@
     };
   </script>
 
-  <!-- 5. Import Map (unchanged) -->
+  <!-- 5. Import Map -->
   <script type="importmap">
     {
       "imports": {
@@ -82,7 +82,7 @@
     }
   </script>
 
-  <!-- 6. Your Tailwind base styles (unchanged) -->
+  <!-- 6. Tailwind base styles -->
   <style type="text/tailwindcss">
     @layer base {
       body {
@@ -103,5 +103,8 @@
 
 <body class="transition-colors duration-300">
   <div id="root"></div>
+
+  <!-- This line starts your React app -->
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
