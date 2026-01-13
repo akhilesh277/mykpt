@@ -1,0 +1,7 @@
+{
+  "name": "MyKPT",
+  "description": "Centralized hub for KPT Mangalore services including Attendance, Official Website, iMarks, and more.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
