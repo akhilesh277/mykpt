@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>MyKPT - KPT Mangalore</title>
+    <!-- Tailwind Play CDN for immediate preview restoration -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -20,6 +20,7 @@
                     animation: {
                         'fade-in': 'fadeIn 0.3s ease-out',
                         'slide-up': 'slideUp 0.3s ease-out',
+                        'marquee': 'marquee 20s linear infinite',
                     },
                     keyframes: {
                         fadeIn: {
@@ -30,6 +31,10 @@
                             '0%': { transform: 'translateY(10px)', opacity: '0' },
                             '100%': { transform: 'translateY(0)', opacity: '1' },
                         },
+                        marquee: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
                     }
                 }
             }
@@ -46,7 +51,7 @@
       }
     }
     </script>
-    <style>
+    <style type="text/tailwindcss">
         @layer base {
             body {
                 @apply font-['Inter'] bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-zinc-100;
