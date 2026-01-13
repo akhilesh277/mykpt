@@ -1,23 +1,23 @@
 
 {
-  "name": "TTT JNAN ChatBot",
-  "short_name": "JNANBot",
-  "description": "Premium DCET/Diploma specialized AI assistant.",
+  "name": "MyKPT - KPT Mangalore",
+  "short_name": "MyKPT",
+  "description": "Centralized hub for KPT Mangalore services including Attendance, Official Website, and more.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#4f46e5",
+  "theme_color": "#1e40af",
   "icons": [
     {
-      "src": "https://i.postimg.cc/YC2MXrVy/Whats-App-Image-2026-01-05-at-2.jpg",
+      "src": "https://gpt.karnataka.gov.in/kptmangalore/public/uploads/dept_logo1755926888.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "https://i.postimg.cc/YC2MXrVy/Whats-App-Image-2026-01-05-at-2.jpg",
+      "src": "https://gpt.karnataka.gov.in/kptmangalore/public/uploads/dept_logo1755926888.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ]
 }
