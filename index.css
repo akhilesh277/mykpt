@@ -2,38 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles */
 @layer base {
-  html, body {
+  html,
+  body {
     @apply font-sans text-[15px] antialiased;
-    /* Ensure body doesn't bounce/lock */
     overscroll-behavior-y: none;
   }
 
   /* Interactive elements */
-  a, button, [role="button"], .cursor-pointer {
+  a,
+  button,
+  [role="button"],
+  .cursor-pointer {
     cursor: pointer;
   }
 }
 
 /* Global class for optional Book Cursor */
-.book-cursor-active, 
+.book-cursor-active,
 .book-cursor-active * {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="font-size: 24px;"><text y="24">📖</text></svg>'), auto !important;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>📖</text></svg>"),
+    auto !important;
 }
 
-/* Maintain pointers for interactive elements even in book mode for better UX */
-.book-cursor-active a, 
-.book-cursor-active button, 
-.book-cursor-active [role="button"], 
+/* Maintain pointers for interactive elements even in book mode */
+.book-cursor-active a,
+.book-cursor-active button,
+.book-cursor-active [role="button"],
 .book-cursor-active .cursor-pointer {
   cursor: pointer !important;
 }
 
+/* Component styles */
 @layer components {
   .glass {
     @apply bg-white/70 backdrop-blur-md;
   }
-  
+
   .dark .glass {
     @apply bg-slate-900/70 backdrop-blur-md;
   }
@@ -44,7 +50,7 @@
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
-  
+
   .dark .menu-solid {
     background-color: #0f0f0f !important;
     opacity: 1 !important;
@@ -53,14 +59,17 @@
   }
 }
 
+/* Utility styles */
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scroll-stable {
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
