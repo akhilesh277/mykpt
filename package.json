@@ -4,11 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "echo \"This project is currently running using CDN. No dev server configured.\"",
-    "build": "echo \"Build system not configured yet.\"",
-    "start": "echo \"Static app running via CDN.\""
+    "dev": "echo \"Running in dev mode via CDN.\"",
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
-  "description": "MyKPT - KPT Mangalore app (CDN based React + Tailwind)",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.18"
+  },
+  "description": "MyKPT - KPT Mangalore app",
   "author": "Akhilesh",
   "license": "MIT"
 }

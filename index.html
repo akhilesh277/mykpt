@@ -1,11 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MyKPT - KPT Mangalore</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Runtime Tailwind Loader (Fixes production warning) -->
+    <script src="./tailwindcdn.js"></script>
+    
+    <!-- Production CSS (Uncomment after running 'npm run build:css') -->
+    <!-- <link href="./dist/output.css" rel="stylesheet"> -->
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -21,6 +26,7 @@
         }
     </style>
     <script>
+        // Keep this for the runtime engine. For production, these are in tailwind.config.js
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -62,5 +68,6 @@
 </head>
 <body class="bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-zinc-100 transition-colors duration-300">
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
